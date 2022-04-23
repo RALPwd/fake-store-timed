@@ -1,0 +1,38 @@
+.menu{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+  padding: 0 50px;
+  box-sizing: border-box;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    li{
+      list-style: none;
+      a{
+        text-decoration: none;
+        color: #242424;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 0 20px;
+        &:hover{
+          color: #0688fa;
+        }
+      }
+    }
+  }
+  &__text {
+    font-weight: 600;
+    margin-left: 10px;
+  }
+  img{
+    width: 120px;
+  }
+}

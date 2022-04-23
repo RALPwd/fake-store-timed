@@ -26,14 +26,18 @@ export default function Home() {
         <div className={styles.product}>
           {products.map(product => (
             <div key={product.id} className={styles.product__card}>
-              <div className={styles.product__card__details}>
-                <div className={styles.product__card__category}>{product.category}</div>
-                <h3 className={styles.product__card__title}>{product.title}</h3>
-                <p className={styles.product__card__price}>${product.price}</p>
-                <ProductLink product={product.id} />
-              </div>
               <div className={styles.product__card__imagecontainer}>
                 <img src={product.image} alt={product.title} className={styles.product__card__image}/>
+              </div>
+              <div className={styles.product__card__details}>
+                <div className={styles.product__card__category}>{product.category}</div>
+                <h3 className={styles.product__card__title}>{
+                  product.title.length > 40 ?
+                  `${product.title.substring(0, 40)}...` :
+                  product.title
+                }</h3>
+                <p className={styles.product__card__price}>${product.price}</p>
+                <ProductLink product={product.id} />
               </div>
             </div>
           ))}

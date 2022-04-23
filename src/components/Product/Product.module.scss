@@ -1,0 +1,70 @@
+.productcontainer{
+  background-image: url("https://res.cloudinary.com/ralpwd/image/upload/v1650662852/bgopacity_gobqbz.jpg");
+  margin-top: 50px;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  &__product{
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: 40px;
+    align-items: center;
+    background-color: #eaeaea;
+    border-radius: 15px;
+  }
+  &__details{
+    max-width: 80%;
+    padding: 50px 20px;
+    &__category{
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    &__price{
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  &__image{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 7px 0px 5px 4px #0000000f;
+    border-radius: 20px;
+    margin-left: 20px;
+    img{
+      width: 50%;
+      height: auto;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .productcontainer{
+    &__product{
+      grid-template-columns: 100%;
+      margin-top: 50px;
+      width: 90%;
+    }
+    &__image{
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 20px;
+      img{
+        max-width: 300px;
+      }
+    }
+  }
+}

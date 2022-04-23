@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import styles from './ProductLink.module.scss'
 
 export default function ProductLink( { product } ) {
   const [timer, setTimer] = React.useState(Math.round(Math.random() * 300));
@@ -23,7 +24,7 @@ export default function ProductLink( { product } ) {
       {
         timer>0 ?
         <> 
-          <Link to={`/product/${product}`}>
+          <Link className={styles.button} to={`/product/${product}`}>
             Ver más
           </Link>
           <p>Faltan {minutes} minutos y {seconds} segundos para aprovechar la promoción.</p>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Rating from 'react-rating';
 import Loader from '../Loader/Loader';
+import styles from './Product.module.scss';
 
 function Product() {
   const [product, setProduct] = useState([]);
@@ -28,15 +30,22 @@ function Product() {
       {loading ? (
         <Loader />
       ) : (
-        <> 
-          <p>{product.category}</p>
-          <h1>{product.title}</h1>
-          <p>Rating: {productRating.rate}</p>
-          <p>Reviewed by {productRating.count} persons</p>
-          <p>{product.description}</p>
-          <p>${product.price}</p>
-          <img src={product.image} alt={product.title} />
-        </>
+        <div className={styles.productcontainer}>
+          <div className={styles.productcontainer__product}>
+            <div className={styles.productcontainer__image}>
+              <img src={product.image} alt={product.title} />
+            </div>
+            <div className={styles.productcontainer__details}>
+              <p className={styles.productcontainer__details__category}>{product.category}</p>
+              <h1>{product.title}</h1>
+              <Rating initialRating={productRating.rate} readonly/>
+              <p>Rating: {productRating.rate}</p>
+              <p>Reviewed by {productRating.count} persons</p>
+              <p>{product.description}</p>
+              <p className={styles.productcontainer__details__price}>${product.price}</p>
+            </div>
+          </div>
+        </div>
       )}
     </>
   )
