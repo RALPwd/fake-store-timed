@@ -1,26 +1,34 @@
 .product{
   display: flex;
   flex-wrap: wrap;
-  column-gap: 3vw;
+  column-gap: 4vw;
   row-gap: 3vw;
-  padding: 1vw;
+  padding: 0.7vw;
   justify-content: center;
+  background-image: url("https://res.cloudinary.com/ralpwd/image/upload/v1650662852/bgopacity_gobqbz.jpg");
+  margin-top: 50px;
   &__card{
-    border: 1px solid black;
     width: 25vw;
     min-width: 300px;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 30% 70%;
     padding: 1vw;
+    background-color: #eaeaea;
+    border-radius: 15px;
+    box-shadow: 7px 0px 5px 4px #0000000f;
     &__details{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding-left: 25px;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
     &__title{
       font-size: 1.2rem;
       font-weight: bold;
       text-align: left;
+      color: #242424;
     }
     &__category{
       font-size: 0.8rem;
@@ -29,7 +37,7 @@
       text-transform: capitalize;
     }
     &__price{
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: bold;
       text-align: left;
     }
@@ -37,10 +45,40 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-right: 10px;
+      width: 140%;
+      position: relative;
+      left: -60px;
+      background-color: white;
+      box-shadow: 7px 0px 5px 4px #0000000f;
+      border-radius: 15px;
     }
     &__image{
       width: 80%;
       height: auto;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .product{
+    row-gap: 80px;
+    &__card{
+      grid-template-columns: 100%;
+      grid-template-rows: 40% 60%;
+      &__details{
+        margin-top: 30px;
+      }
+      &__imagecontainer{
+        height: 300px;
+        width: 80%;
+        margin: 0 auto;
+        left: 0;
+        top: -40px
+      }
+      &__image{
+        width: 40%;
+      }
     }
   }
 }
